@@ -14,7 +14,7 @@
             </contact>
         </manufacturer>
         <version>3.14159</version>
-        <datetime>2004-09-30</datetime>
+        <datetime>2004-09-30T21:30:59</datetime>
     </generator>
     <mediadata>
         <image id="img_flatfeet">
@@ -89,16 +89,14 @@
                 <lastname>Alzheimer</lastname>
                 <honorific>Dr.</honorific>
                 <sex>male</sex>
-                <birthdate>
-                    <datetime>1919-02-30</datetime>
-                </birthdate>
+                <birthdate>1919-03-30</birthdate>
                 <passport>987654321</passport>
                 <height>1.8</height>
                 <weight>86.0</weight>
                 <smoking>0</smoking>
                 <bloodgroup>A</bloodgroup>
                 <numberofdives timeinterval="P13Y/2006-02-16" dives="1234"/>
-                <membership organisation="VDST/CMAS" memberid="123456"/>
+                <membership organization="VDST/CMAS" memberid="123456"/>
             </personal>
             <address>
                 <street>Auf der Heide 12</street>
@@ -122,9 +120,9 @@
                             <lastname>Dusel</lastname>
                             <honorific>Dr.</honorific>
                             <sex>male</sex>
-                            <birthdate>
-                                <!-- if date of birth is known, it can be given here... -->
-                            </birthdate>
+                            <!-- if date of birth is known, it can be given here...
+                            <birthdate>1963-03-10</birthdate>
+                            -->
                         </personal>
                         <address>
                             <street>Duddelstr. 34</street>
@@ -160,43 +158,35 @@
                 <!-- <certification> elements one after the other     -->
                 <certification>
                     <level>Bronze</level>
-                    <organisation>VDST/CMAS</organisation>
+                    <organization>VDST/CMAS</organization>
                     <!-- because data of the then dive instructor were not -->
                     <!-- registered in the UDDF file, no reference via     -->
                     <!-- <link ref="..."/> can be made here                -->
-                    <issuedate>
-                        <datetime>1994-03-15</datetime>
-                    </issuedate>
+                    <issuedate>1994-03-15</issuedate>
                 </certification>
                 <certification>
                     <specialty>Orientation</specialty>
-                    <organisation>VDST/CMAS</organisation>
+                    <organization>VDST/CMAS</organization>
                     <!-- because data of the then dive instructor were not -->
                     <!-- registered in the UDDF file, no reference via     -->
                     <!-- <link ref="..."/> can be made here                -->
-                    <issuedate>
-                        <datetime>1994-03-15</datetime>
-                    </issuedate>
+                    <issuedate>1994-03-15</issuedate>
                 </certification>
                 <certification>
                     <level>Silver</level>
-                    <organisation>VDST/CMAS</organisation>
+                    <organization>VDST/CMAS</organization>
                     <!-- because data of the then dive instructor were not -->
                     <!-- registered in the UDDF file, no reference via     -->
                     <!-- <link ref="..."/> can be made here                -->
-                    <issuedate>
-                        <datetime>1997-11-26</datetime>
-                    </issuedate>
+                    <issuedate>1997-11-26</issuedate>
                 </certification>
                 <certification>
                     <level>Gold</level>
-                    <organisation>VDST/CMAS</organisation>
+                    <organization>VDST/CMAS</organization>
                     <!-- because data of the then dive instructor were not -->
                     <!-- registered in the UDDF file, no reference via     -->
                     <!-- <link ref="..."/> can be made here                -->
-                    <issuedate>
-                        <datetime>2000-05-10</datetime>
-                    </issuedate>
+                    <issuedate>2000-05-10</issuedate>
                 </certification>
             </education>
             <divepermissions>
@@ -204,22 +194,14 @@
                 <permit>
                     <name>DiveCard</name>
                     <region>Austria</region>
-                    <issuedate>
-                        <datetime>2004-08-24</datetime>
-                    </issuedate>
-                    <validdate>
-                        <datetime>2005-08-23</datetime>
-                    </validdate>
+                    <issuedate>2004-08-24</issuedate>
+                    <validdate>2005-08-23</validdate>
                 </permit>
                 <permit>
                     <name>Zeeland</name>
                     <region>Zeeland (The Netherlands)</region>
-                    <issuedate>
-                        <datetime>1996-09-03</datetime>
-                    </issuedate>
-                    <validdate>
-                        <datetime>2001-08-31</datetime>
-                    </validdate>
+                    <issuedate>1996-09-03</issuedate>
+                    <validdate>2001-08-31</validdate>
                 </permit>
                 <!-- here more dive permissions if necessary -->
             </divepermissions>

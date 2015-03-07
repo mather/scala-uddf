@@ -220,11 +220,9 @@
 	<xs:element name="business">
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="simpleNamedType">
-					<xs:sequence>
-						<xs:element name="shop" type="shopType" minOccurs="0" maxOccurs="unbounded"/>
-					</xs:sequence>
-				</xs:extension>
+				<xs:sequence>
+					<xs:element name="shop" type="shopType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
@@ -303,7 +301,7 @@
 			<xs:element name="birthname" type="xs:string" minOccurs="0"/>
 			<xs:element name="honorific" type="xs:string" minOccurs="0"/>
 			<xs:element name="sex" type="sexType" minOccurs="0"/>
-			<xs:element name="birthdate" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="birthdate" type="xs:date" minOccurs="0"/>
 			<xs:element name="passport" type="xs:string" minOccurs="0"/>
 			<xs:element name="membership" minOccurs="0">
 				<xs:complexType>
@@ -378,8 +376,8 @@
 			</xs:choice>
 			<xs:element name="organization" type="xs:string" minOccurs="0"/>
 			<xs:element name="instructor" type="instructorType" minOccurs="0"/>
-			<xs:element name="issuedate" type="encapsulatedDateTimeType" minOccurs="0"/>
-			<xs:element name="validdate" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="issuedate" type="xs:date" minOccurs="0"/>
+			<xs:element name="validdate" type="xs:date" minOccurs="0"/>
 <!-- auskommentiert von Kai
             <xs:element name="notes" type="notesType" minOccurs="0"/>
 Ende auskommentiert von Kai -->
@@ -403,8 +401,8 @@ Ende auskommentiert von Kai -->
 			<xs:element name="name"/>
 			<xs:element name="aliasname" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="region" type="xs:string" minOccurs="0"/>
-			<xs:element name="issuedate" type="encapsulatedDateTimeType" minOccurs="0"/>
-			<xs:element name="validdate" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="issuedate" type="xs:date" minOccurs="0"/>
+			<xs:element name="validdate" type="xs:date" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
