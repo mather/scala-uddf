@@ -1,8 +1,20 @@
-<uddf version="3.2.0">
+<uddf xmlns="http://www.streit.cc/uddf/3.2/" version="3.2.0">
     <!-- the <generator> section has to appear in every UDDF file -->
     <generator>
         <!-- description of the program generating the UDDF file -->
-        ...
+        <name>DSL - Diver's Super Logbook</name>
+        <type>logbook</type>
+        <manufacturer>
+            <name>Dive Heroes Company</name>
+            <address>
+                <!-- address data of manufacturer -->
+            </address>
+            <contact>
+                <!-- contact data of manufacturer -->
+            </contact>
+        </manufacturer>
+        <version>3.14159</version>
+        <datetime>2004-09-30T21:30:59</datetime>
     </generator>
     <mediadata>
         <video id="video_red-sea-2003">
@@ -10,7 +22,7 @@
             <objectname>rs2003.avi</objectname>
         </video>
         <video id="video_dive-and-sail-2004">
-            <title>Dive & Sail 2004</title>
+            <title>Dive &amp; Sail 2004</title>
             <objectname>dive-and-sail-2004.avi</objectname>
         </video>
     </mediadata>
@@ -89,6 +101,7 @@
     <divetrip>
         <!-- all documented dive trips are following -->
         <trip id="trip_holiday2003">
+            <name>Trip on Holiday 2003</name>
             <trippart type="hoteltrip, organizedtrip">
                 <name>Dive club travel to Red Sea 2003</name>
                 <dateoftrip startdate="2003-04-12" enddate="2003-04-19"/>
@@ -118,8 +131,9 @@
             </trippart>
         </trip>
         <trip id="trip_holiday2004">
+            <name>Trip on Holiday 2004</name>
             <trippart type="boattrip, individualtrip">
-                <name>Dive & Sail 2004</name>
+                <name>Dive &amp; Sail 2004</name>
                 <dateoftrip startdate="2004-09-24" enddate="2004-10-03"/>
                 <geography>
                     <province>Cote d'Azur</province>
@@ -145,7 +159,7 @@
                     <link ref="video_dive-and-sail-2004"/>
                 </notes>
             </trippart>
-        </trip">
+        </trip>
         <trip id="trip_holiday2005">
             <name>Dive club trip to Corse 2005</name>
             <trippart type="boattrip, organizedtrip">
@@ -201,7 +215,7 @@
                     <link ref="video_corse2005"/>
                 </notes>
             </trippart>
-        </trip">
+        </trip>
     </divetrip>
     <!-- here other sections, dive profiles, or data concerning  -->
     <!-- generation of dive tables e.g., can be given            -->

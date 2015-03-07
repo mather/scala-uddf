@@ -588,9 +588,7 @@ Ende auskommentiert von Kai -->
 					<xs:element name="pricedivepackage" type="priceperdivepackageType" minOccurs="0"/>
 					<xs:element name="guide" type="guideType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="rating" type="ratingType" minOccurs="0" maxOccurs="unbounded"/>
-					<!-- Beginn Erg辰nzung von Kai -->
-					<xs:element name="link" type="linkType"/>
-					<!-- Ende Erg辰nzung von Kai -->
+					<xs:element name="link" type="linkType" minOccurs="0" />
 					<xs:element name="notes" type="notesType" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1547,7 +1545,7 @@ Ende auskommentiert von Kai -->
 		<xs:complexContent>
 			<xs:extension base="namedType">
 				<xs:sequence>
-					<xs:element name="rating" type="ratingType"/>
+					<xs:element name="rating" type="ratingType" minOccurs="0" />
 					<xs:element name="trippart" type="trippartType" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
