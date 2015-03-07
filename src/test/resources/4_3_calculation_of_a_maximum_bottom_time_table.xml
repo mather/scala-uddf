@@ -1,0 +1,148 @@
+<uddf version="3.2.0">
+    <!-- the <generator> section has to appear in every UDDF file -->
+    <generator>
+        <!-- description of the program generating the UDDF file -->
+        <name>MGT</name>
+        <manufacturer>
+            <name>Kai Schröder</name>
+        </manufacturer>
+        <version>0.6</version>
+        <datetime>2004-09-30</datetime>
+    </generator>
+    <gasdefinitions>
+        <!-- only air is to be used for this calculation -->
+        <mix id="Air">
+            <name>air</name>
+            <o2>0.210</o2>
+            <n2>0.790</n2>
+            <he>0.000</he>
+            <ar>0.000</ar>
+            <h2>0.000</h2>
+        </mix>
+    </gasdefinitions>
+    <profiledata>
+        <!-- all recorded dive profiles - here none is necessary -->
+    </profiledata>
+    <tablegeneration>
+        <calculatebottomtimetable>
+            <bottomtimetable id="DECO2000">
+                <link ref="deco2000"/>
+                <output>
+                    <!-- output language is set to "German" -->
+                    <lingo>de</lingo>
+                    <!-- format of output, in this case ASCII -->
+                    <fileformat>ascii</fileformat>
+                    <!-- name of output file -->
+                    <filename>mgt_deco2000</filename>
+                    <!-- headline for table to be calculated -->
+                    <headline>Tabelle fuer   0 m bis  700 muedM (DECO 2000)</headline>
+                    <!-- remarks added to the table output -->
+                    <remark>
+                        Maximale Grundzeit in Minuten bei verschiedenen Flaschenvolumina,
+                        Tauchtiefen und Atemminutenvolumen (AMV)
+                        unter Beruecksichtigung von notwendigen Dekompressionsstopps
+
+                        Wird die Nullzeit bei einem Tauchgang ueberschritten, so wird der
+                        max. Grundzeit ein "d" (fuer Deko-Tauchgang) vorangestellt.
+
+                        Ist die maximale Grundzeit laenger als die Nullzeit, aber dafuer
+                        in der Tabelle kein Dekostopp angegeben, so wird die Nullzeit als
+                        maximale Grundzeit angegeben und dieser ein "s" (fuer "Sicher-
+                        heitsstopp") vorangestellt. In diesem Fall obliegt es dem Taucher,
+                        einen Sicherheitsstopp von z.B. 3 min auf 5 m (oder laenger) zu machen.
+
+                        Muss die maximale Grundzeit auf die laengste in der Tabelle enthaltene
+                        Grundzeit gesetzt werden (weil fuer laengere Grundzeiten keine
+                        Dekostopps mehr berechnet wurden), wird dem Wert ein "t"
+                        vorangestellt. In diesem Fall ist die theoretisch moegliche maximale
+                        Grundzeit laenger als die angegebene, aber dafuer existieren keine
+                        Dekostopp-Angaben mehr.
+
+                        Grundzeiten berechnet mit Hilfe der Austauchtabelle DECO 2000
+                        (0 -- 700 muedM) von Max Hahn; Aufstiegsgeschwindigkeit 10 m/min
+                    </remark>
+                </output>
+                <bottomtimetablescope>
+                    <!-- shallowest depth: 5 m -->
+                    <divedepthbegin>5.0</divedepthbegin>
+                    <!-- deepest depth: 60 m -->
+                    <divedepthend>60.0</divedepthend>
+                    <!-- increment for depth: 5 m -->
+                    <divedepthstep>5.0</divedepthstep>
+                    <!-- table is to be calculated for different breathing gas consumption values, ... -->
+                    <!-- beginning with a BCV of 10 l/min -->
+                    <breathingconsumptionvolumebegin>0.00016666667</breathingconsumptionvolumebegin>
+                    <!-- end at 30 l/min -->
+                    <breathingconsumptionvolumeend>0.0005</breathingconsumptionvolumeend>
+                    <!-- increment 5 l/min -->
+                    <breathingconsumptionvolumestep>8.3333333e-5</breathingconsumptionvolumestep>
+                    <!-- ... and also for different tank volumes... -->
+                    <!-- beginning with a tank volume of 10 litres ^= 0.01 m^3 -->
+                    <tankvolumebegin>0.01</tankvolumebegin>
+                    <!-- end at 20 litres -->
+                    <tankvolumeend>0.02</tankvolumeend>
+                    <!-- increment 5 litres -->
+                    <tankvolumestep>0.005</tankvolumestep>
+                    <!-- fill pressure at beginning of each dive 200 bar -->
+                    <tankpressurebegin>20000000.0</tankpressurebegin>
+                    <!-- reserve pressure at end to be considered (40 bar) - not to be used -->
+                    <tankpressurereserve>40000.0</tankpressurereserve>
+                </bottomtimetablescope>
+            </bottomtimetable>
+        </calculatebottomtimetable>
+    </tablegeneration>
+</uddf>
+
+<!--
+The output to the above given parameters could be as follows:
+
+ MGT - Maximale Grundzeit-Tabellen-Berechnung v0.6 vom 27.3.2006, Autor: Kai Schroeder
+
+     Maximale Grundzeit in Minuten bei verschiedenen Flaschenvolumina,
+     Tauchtiefen und Atemminutenvolumen (AMV)
+     unter Beruecksichtigung von notwendigen Dekompressionsstopps
+
+     Wird die Nullzeit bei einem Tauchgang ueberschritten, so wird der
+     max. Grundzeit ein "d" (fuer Deko-Tauchgang) vorangestellt.
+
+     Ist die maximale Grundzeit laenger als die Nullzeit, aber dafuer
+     in der Tabelle kein Dekostopp angegeben, so wird die Nullzeit als
+     maximale Grundzeit angegeben und dieser ein "s" (fuer "Sicher-
+     heitsstopp") vorangestellt. In diesem Fall obliegt es dem Taucher,
+     einen Sicherheitsstopp von z.B. 3 min auf 5 m (oder laenger) zu machen.
+
+     Muss die maximale Grundzeit auf die laengste in der Tabelle enthaltene
+     Grundzeit gesetzt werden (weil fuer laengere Grundzeiten keine
+     Dekostopps mehr berechnet wurden), wird dem Wert ein "t"
+     vorangestellt. In diesem Fall ist die theoretisch moegliche maximale
+     Grundzeit laenger als die angegebene, aber dafuer existieren keine
+     Dekostopp-Angaben mehr.
+
+     Grundzeiten berechnet mit Hilfe der Austauchtabelle DECO 2000
+     (0 - 700 muedM) von Max Hahn; Aufstiegsgeschwindigkeit 10 m/min
+
+
+
+                              Tabelle fuer   0 m bis  700 muedM (DECO 2000)
+----------------------------------------------------------------------------------------------------
+       |                                  maximale Grundzeit [min]
+       |--------------------------------------------------------------------------------------------
+       |                                      Flaschenvolumen
+ Tauch |           10 Liter           |           15 Liter           |           20 Liter
+ tiefe |                              |                              |
+  [m]  |          AMV [l/min]         |          AMV [l/min]         |          AMV [l/min]
+       |  10    15    20    25    30  |  10    15    20    25    30  |  10    15    20    25    30
+-------+------------------------------+------------------------------+------------------------------
+   5   |  106    71    53    42    35 |  160   106    80    64    53 |  213   142   106    85    71
+  10   |   80    53    40    32    26 |  120    80    60    48    40 | s142   106    80    64    53
+  15   |   64    42    32    25    21 | t 84    64    48    38    32 | t 84  d 82    64    51    42
+  20   | d 48  d 34    26    21    17 | t 61  d 48  d 37  d 31    26 | t 61  t 61  d 48  d 40  d 34
+  25   | d 38  d 27  d 21  d 18    15 | t 46  d 38  d 30  d 25  d 21 | t 46  t 46  d 38  d 31  d 27
+  30   | d 33  d 23  d 18  d 15    13 | t 36  d 33  d 25  d 21  d 18 | t 36  t 36  d 33  d 27  d 23
+  35   | d 27  d 19  d 14  d 13  d 10 | t 33  d 27  d 21  d 18  d 14 | t 33  t 33  d 27  d 22  d 19
+  40   | d 22  d 16  d 13  d 10  d  9 | t 25  d 22  d 18  d 15  d 13 | t 25  t 25  d 22  d 19  d 16
+  45   | d 20  d 14  d 12  d 10  d  8 | t 22  d 20  d 16  d 13  d 12 | t 22  t 22  d 20  d 17  d 14
+  50   | t 18  d 13  d 10  d  8  d  7 | t 18  t 18  d 14  d 12  d 10 | t 18  t 18  t 18  d 14  d 13
+  55   | t 16  d 11  d  9  d  8  d  6 | t 16  t 16  d 12  d 10  d  9 | t 16  t 16  t 16  d 13  d 11
+  60   | t 14  d 10  d  8  d  6  d  6 | t 14  t 14  d 11  d  9  d  8 | t 14  t 14  t 14  d 12  d 10
+-->
