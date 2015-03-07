@@ -208,11 +208,9 @@
 	<xs:element name="maker">
 		<xs:complexType>
 			<xs:complexContent>
-				<xs:extension base="simpleNamedType">
-					<xs:sequence>
-						<xs:element name="manufacturer" type="manufacturerType" minOccurs="0" maxOccurs="unbounded"/>
-					</xs:sequence>
-				</xs:extension>
+                <xs:sequence>
+                    <xs:element name="manufacturer" type="manufacturerType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
