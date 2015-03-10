@@ -1,7 +1,7 @@
-package com.github.mather.uddf
+package com.github.mather.uddf.example
 
-import org.specs2.mutable._
 import com.github.mather.uddf.Uddf
+import org.specs2.mutable._
 
 import scala.xml.{Elem, XML}
 
@@ -10,9 +10,9 @@ import scala.xml.{Elem, XML}
  *
  * @author kuwahataeisuke
  */
-class DiverDataSpec extends Specification {
+class DescriptionOfDiveSpotSpec extends Specification {
 
-  val xml = XML.load(getClass.getResource("/1_1_divers_data.xml"))
+  val xml = XML.load(getClass.getResource("/1_2_description_of_dive_spot.xml"))
 
   "Diver Data XML" >> {
     "can be load as XML" >> {

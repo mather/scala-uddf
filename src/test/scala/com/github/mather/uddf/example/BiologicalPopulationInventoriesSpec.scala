@@ -1,5 +1,6 @@
-package com.github.mather.uddf
+package com.github.mather.uddf.example
 
+import com.github.mather.uddf.Uddf
 import org.specs2.mutable._
 
 import scala.xml.{Elem, XML}
