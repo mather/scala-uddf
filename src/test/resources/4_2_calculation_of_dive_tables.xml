@@ -1,4 +1,4 @@
-<uddf version="3.2.0">
+<uddf xmlns="http://www.streit.cc/uddf/3.2/" version="3.2.0">
     <!-- the <generator> section has to appear in every UDDF file -->
     <generator>
         <!-- description of the program generating the UDDF file -->
@@ -40,6 +40,13 @@
         <repetitiongroup id="rg1">
             <dive id="dive1">
                 <!-- here all dive profile data -->
+                <informationbeforedive>
+                  <datetime>2013-10-01T10:21:00</datetime>
+                </informationbeforedive>
+                <informationafterdive>
+                  <greatestdepth>23.0</greatestdepth>
+                  <diveduration>2200</diveduration>
+                </informationafterdive>
             </dive>
             <!-- here can be stored more dive profiles -->
         </repetitiongroup>
@@ -56,6 +63,8 @@
                     <infinity/>
                 </surfaceintervalbeforedive>
                 <density>1030.0</density>
+                <!-- maximum ascent velocity 11 m/min ^= 0.1666... m/s -->
+                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <!-- statements for the output to be generated -->
                 <output>
                     <!-- language: English -->
@@ -73,8 +82,6 @@
                     <!-- here additional parameters for the executing software -->
                 </applicationdata>
                 <decomodel>ZH-L16c</decomodel>
-                <!-- maximum ascent velocity 10 m/min ^= 0.1666... m/s -->
-                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <!-- the following parameters all MUST BE GIVEN -->
                 <tablescope>
                     <!-- sea level -->
@@ -103,6 +110,8 @@
                     <infinity/>
                 </surfaceintervalbeforedive>
                 <density>1030.0</density>
+                <!-- maximum ascent velocity 10 m/min ^= 0.1666... m/s -->
+                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <!-- statements for the output to be generated -->
                 <output>
                     <!-- language: English -->
@@ -120,8 +129,6 @@
                     <!-- here additional parameters for the executing software -->
                 </applicationdata>
                 <decomodel>ZH-L16c</decomodel>
-                <!-- maximum ascent velocity 10 m/min ^= 0.1666... m/s -->
-                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <!-- the following parameters all MUST BE GIVEN -->
                 <tablescope>
                     <!-- sea level -->
@@ -151,9 +158,11 @@
                 <!-- the previous dive (cross-referenced above) and the next one for -->
                 <!-- which the table is to be calculated -->
                 <surfaceintervalbeforedive>
-                    <passedtime>7200.0</passedtime>
+                    <passedtime>7200</passedtime>
                 </surfaceintervalbeforedive>
                 <density>1030.0</density>
+                <!-- maximum ascent velocity 10 m/min ^= 0.1666... m/s -->
+                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <!-- statements for the output to be generated -->
                 <output>
                     <!-- language: English -->
@@ -174,8 +183,6 @@
                     <!-- here additional parameters for the executing software -->
                 </applicationdata>
                 <decomodel>ZH-L16c</decomodel>
-                <!-- maximum ascent velocity 10 m/min ^= 0.1666... m/s -->
-                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <!-- the following parameters all MUST BE GIVEN -->
                 <tablescope>
                     <!-- sea level -->
@@ -205,9 +212,11 @@
                 <!-- the previous dive (cross-referenced above) and the next one for -->
                 <!-- which the table is to be calculated -->
                 <surfaceintervalbeforedive>
-                    <passedtime>7200.0</passedtime>
+                    <passedtime>7200</passedtime>
                 </surfaceintervalbeforedive>
                 <density>1030.0</density>
+                <!-- maximum ascent velocity 10 m/min ^= 0.1666... m/s -->
+                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <!-- statements for the output to be generated -->
                 <output>
                     <!-- language: English -->
@@ -228,8 +237,6 @@
                     <!-- here additional parameters for the executing software -->
                 </applicationdata>
                 <decomodel>ZH-L16c</decomodel>
-                <!-- maximum ascent velocity 10 m/min ^= 0.1666... m/s -->
-                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <!-- the following parameters all MUST BE GIVEN -->
                 <tablescope>
                     <!-- sea level -->
