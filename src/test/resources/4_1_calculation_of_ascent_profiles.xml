@@ -1,4 +1,4 @@
-<uddf version="3.2.0">
+<uddf xmlns="http://www.streit.cc/uddf/3.2/" version="3.2.0">
     <!-- the <generator> section has to appear in every UDDF file -->
     <generator>
         <!-- description of the program generating the UDDF file -->
@@ -67,6 +67,9 @@
                     <infinity/>
                 </surfaceintervalbeforedive>
                 <density>1030.0</density>   <!-- salt water -->
+                <!-- maximum ascent velocity in meters per seconds -->
+                <!-- here: 10 m/min ^= 0.1666... m/s -->
+                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <output>
                     <lingo>en</lingo>
                     <fileformat>pdf</fileformat>
@@ -84,9 +87,6 @@
                 <decomodel>ZH-L16</decomodel>
                 <!-- "Deep Stops" shall be used; length 1 minute -->
                 <deepstoptime>60.0</deepstoptime>
-                <!-- maximum ascent velocity in meters per seconds -->
-                <!-- here: 10 m/min ^= 0.1666... m/s -->
-                <maximumascendingrate>0.16666666667</maximumascendingrate>
                 <!-- settings on which depths the breathing gases shall be changed -->
                 <mixchange>
                     <!-- change of breathing gases during ascent -->

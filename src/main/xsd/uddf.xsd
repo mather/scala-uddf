@@ -1219,7 +1219,7 @@ Ende auskommentiert von Kai -->
 	</xs:complexType>
 
 	<xs:complexType name="waypointType">
-		<xs:sequence>
+		<xs:all>
 			<xs:element name="alarm" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:simpleContent>
@@ -1312,7 +1312,7 @@ Ende auskommentiert von Kai -->
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="nodecotime" minOccurs="0" type="xs:float"/>
-		</xs:sequence>
+		</xs:all>
 	</xs:complexType>
 	<xs:simpleType name="alarmType">
 		<xs:restriction base="xs:string">
