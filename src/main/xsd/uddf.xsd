@@ -1642,7 +1642,7 @@ Ende auskommentiert von Kai -->
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="setdcdataType">
-		<xs:sequence>
+		<xs:all>
 			<xs:element name="setdcalarmtime" type="dcalarmWithTimeType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="setdcaltitude" type="xs:float" minOccurs="0"/>
 			<xs:element name="setdcbuddydata" type="dcbuddydataType" minOccurs="0"/>
@@ -1657,7 +1657,7 @@ Ende auskommentiert von Kai -->
 			<xs:element name="setdcownerdata" type="markerType" minOccurs="0"/>
 			<xs:element name="setdcpassword" type="xs:string" minOccurs="0"/>
 			<xs:element name="setdcgeneratordata" type="markerType" minOccurs="0"/>
-		</xs:sequence>
+		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="dcendndtalarmType">
 		<xs:sequence>
@@ -1688,27 +1688,31 @@ Ende auskommentiert von Kai -->
 			<xs:element name="dcalarm" type="dcalarmType"/>
 		</xs:all>
 	</xs:complexType>
-	<xs:complexType name="dcalarmtimeType">
-		<xs:all>
-			<xs:element name="acknowledge" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:length value="0"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element name="period" type="xs:float" minOccurs="0"/>
-			<xs:element name="alarmType" type="xs:unsignedShort"/>
-		</xs:all>
-	</xs:complexType>
 	<xs:complexType name="dcalarmWithTimeType">
 		<xs:complexContent>
-			<xs:extension base="encapsulatedDateTimeType">
-				<xs:sequence>
-					<xs:element name="dcalarm" type="dcalarmType"/>
-				</xs:sequence>
-			</xs:extension>
+			<xs:sequence>
+			    <xs:element name="time" type="dcalarmtimeType" />
+				<xs:element name="dcalarm" type="dcalarmType"/>
+			</xs:sequence>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="dcalarmtimeType">
+	  <xs:sequence>
+	    <xs:element name="hour">
+	      <xs:simpleType>
+	        <xs:restriction base="xs:nonNegativeInteger">
+	          <xs:maxInclusive value="23" /> 
+	        </xs:restriction>
+	      </xs:simpleType>
+	    </xs:element>
+	    <xs:element name="minute">
+	      <xs:simpleType>
+	        <xs:restriction base="xs:nonNegativeInteger">
+	          <xs:maxInclusive value="59" /> 
+	        </xs:restriction>
+	      </xs:simpleType>
+	    </xs:element>
+	  </xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="dcalarmWithDepthType">
 		<xs:sequence>
