@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- UDDF version 3.2.1, last addition/changes: 06.01.2013 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.streit.cc/uddf/3.2/"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.streit.cc/uddf/3.2/" version="3.2.1"
 	targetNamespace="http://www.streit.cc/uddf/3.2/" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="uddf">
 		<xs:complexType>
@@ -30,7 +29,7 @@
 		</xs:complexType>
 	</xs:element>
 	<!--
-		*** global types
+	*** global types
 	-->
 	<xs:complexType name="ID_TYPE">
 		<xs:attribute name="id" type="xs:ID" use="required"/>
@@ -135,33 +134,31 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--
-		*** generator
-	-->
+	*** generator
+  -->
 	<xs:element name="generator">
 		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="simpleNamedType">
-					<xs:sequence>
-						<xs:element name="type" minOccurs="0">
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="converter"/>
-									<xs:enumeration value="divecomputer"/>
-									<xs:enumeration value="logbook"/>
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
-						<xs:element name="link" type="linkType" minOccurs="0"/>
-						<xs:element name="manufacturer" type="manufacturerType" minOccurs="0"/>
-						<xs:element name="version" type="xs:string" minOccurs="0"/>
-						<xs:element name="datetime" type="xs:dateTime" minOccurs="0"/>
-					</xs:sequence>
-				</xs:extension>
-			</xs:complexContent>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="aliasname" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="type" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="converter"/>
+							<xs:enumeration value="divecomputer"/>
+							<xs:enumeration value="logbook"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="link" type="linkType" minOccurs="0"/>
+				<xs:element name="manufacturer" type="manufacturerType" minOccurs="0"/>
+				<xs:element name="version" type="xs:string" minOccurs="0"/>
+				<xs:element name="datetime" type="xs:dateTime" minOccurs="0"/>
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<!--
-		*** mediadata
+	*** mediadata
 	-->
 	<xs:element name="mediadata">
 		<xs:complexType>
@@ -216,19 +213,19 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!--
-		*** maker
+	*** maker
 	-->
 	<xs:element name="maker">
 		<xs:complexType>
 			<xs:complexContent>
-                <xs:sequence>
-                    <xs:element name="manufacturer" type="manufacturerType" minOccurs="0" maxOccurs="unbounded"/>
-                </xs:sequence>
+				<xs:sequence>
+					<xs:element name="manufacturer" type="manufacturerType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
 	<!--
-		*** business
+	*** business
 	-->
 	<xs:element name="business">
 		<xs:complexType>
@@ -240,7 +237,7 @@
 		</xs:complexType>
 	</xs:element>
 	<!--
-		*** diver
+	*** diver
 	-->
 	<xs:element name="diver">
 		<xs:complexType>
@@ -391,9 +388,6 @@
 			<xs:element name="instructor" type="instructorType" minOccurs="0"/>
 			<xs:element name="issuedate" type="xs:date" minOccurs="0"/>
 			<xs:element name="validdate" type="xs:date" minOccurs="0"/>
-<!-- auskommentiert von Kai
-            <xs:element name="notes" type="notesType" minOccurs="0"/>
-Ende auskommentiert von Kai -->
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="instructorType">
@@ -429,7 +423,7 @@ Ende auskommentiert von Kai -->
 		</xs:sequence>
 	</xs:complexType>
 	<!--
-		*** equipment
+	*** equipment
 	-->
 	<xs:complexType name="equipmentType">
 		<xs:sequence>
@@ -439,10 +433,8 @@ Ende auskommentiert von Kai -->
 			<xs:element name="compass" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="compressor" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="divecomputer" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
-			<!-- Beginn Erg辰nzung von Kai -->
 			<xs:element name="equipmentconfiguration" type="equipmentconfigurationType" minOccurs="0"
 				maxOccurs="unbounded"/>
-			<!-- Ende Erg辰nzung von Kai -->
 			<xs:element name="fins" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="gloves" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="knife" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
@@ -452,14 +444,13 @@ Ende auskommentiert von Kai -->
 			<xs:element name="rebreather" type="rebreatherType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="regulator" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="scooter" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="suit" type="suitType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="suit" type="suitType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="tank" type="tankType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="variouspieces" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="videocamera" type="videocameraType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="watch" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-<!-- Beginn Erg辰nzung von Kai -->
 	<xs:complexType name="equipmentconfigurationType">
 		<xs:complexContent>
 			<xs:extension base="namedType">
@@ -470,7 +461,6 @@ Ende auskommentiert von Kai -->
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-<!-- Ende Erg辰nzung von Kai -->
 	<xs:complexType name="manufacturerType">
 		<xs:complexContent>
 			<xs:extension base="namedType">
@@ -484,10 +474,8 @@ Ende auskommentiert von Kai -->
 	<xs:complexType name="equipmentPieceType">
 		<xs:complexContent>
 			<xs:extension base="namedType">
-                <xs:sequence>
-<!-- Beginn Erg辰nzung v3.2.0 KS 08.05.2012 -->
-                    <xs:element name="link" type="linkType" minOccurs="0"/>
-<!-- Ende Erg辰nzung v3.2.0 KS 08.05.2012 -->
+				<xs:sequence>
+					<xs:element name="link" type="linkType" minOccurs="0"/>
 					<xs:element name="manufacturer" type="manufacturerType" minOccurs="0"/>
 					<xs:element name="model" type="xs:string" minOccurs="0"/>
 					<xs:element name="serialnumber" type="xs:string" minOccurs="0"/>
@@ -499,25 +487,25 @@ Ende auskommentiert von Kai -->
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-    <xs:complexType name="suitType">
-        <xs:complexContent>
-            <xs:extension base="equipmentPieceType">
-                <xs:sequence>
-                    <xs:element name="suittype" minOccurs="0">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="dive-skin"/>
-                                <xs:enumeration value="wet-suit"/>
-                                <xs:enumeration value="dry-suit"/>
-                                <xs:enumeration value="hot-water-suit"/>
-                                <xs:enumeration value="other"/>
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
+	<xs:complexType name="suitType">
+		<xs:complexContent>
+			<xs:extension base="equipmentPieceType">
+				<xs:sequence>
+					<xs:element name="suittype" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="dive-skin"/>
+								<xs:enumeration value="wet-suit"/>
+								<xs:enumeration value="dry-suit"/>
+								<xs:enumeration value="hot-water-suit"/>
+								<xs:enumeration value="other"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="tankType">
 		<xs:complexContent>
 			<xs:extension base="equipmentPieceType">
@@ -578,7 +566,7 @@ Ende auskommentiert von Kai -->
 		</xs:complexContent>
 	</xs:complexType>
 	<!--
-		*** divesite
+	*** divesite
 	-->
 	<xs:element name="divesite">
 		<xs:complexType>
@@ -589,7 +577,7 @@ Ende auskommentiert von Kai -->
 		</xs:complexType>
 	</xs:element>
 	<!--
-		*** divesite divebase
+	*** divesite divebase
 	-->
 	<xs:complexType name="divebaseType">
 		<xs:complexContent>
@@ -617,7 +605,7 @@ Ende auskommentiert von Kai -->
 		</xs:complexContent>
 	</xs:complexType>
 	<!--
-		*** divesite site
+	*** divesite site
 	-->
 	<xs:complexType name="siteType">
 		<xs:complexContent>
@@ -872,7 +860,7 @@ Ende auskommentiert von Kai -->
 		</xs:simpleContent>
 	</xs:complexType>
 	<!--
-		*** gasdefinitons
+	*** gasdefinitons
 	-->
 	<xs:element name="gasdefinitions">
 		<xs:complexType>
@@ -901,7 +889,7 @@ Ende auskommentiert von Kai -->
 		</xs:complexContent>
 	</xs:complexType>
 	<!--
-		*** profiledata
+	*** profiledata
 	-->
 	<xs:element name="profiledata">
 		<xs:complexType>
@@ -1407,7 +1395,7 @@ Ende auskommentiert von Kai -->
 		</xs:complexContent>
 	</xs:complexType>
 	<!--
-      *** tablegeneration
+	*** tablegeneration
 	-->
 	<xs:element name="tablegeneration">
 		<xs:complexType>
@@ -1490,7 +1478,7 @@ Ende auskommentiert von Kai -->
 		</xs:all>
 	</xs:complexType>
 	<!--
-       *** tablegeneration calculatetable
+	*** tablegeneration calculatetable
 	-->
 	<xs:complexType name="tableType">
 		<xs:complexContent>
@@ -1514,8 +1502,8 @@ Ende auskommentiert von Kai -->
 		</xs:all>
 	</xs:complexType>
 	<!--
-       *** tablegeneration calculatebottomtimetable
-    -->
+	*** tablegeneration calculatebottomtimetable
+	-->
 	<xs:complexType name="bottomtimetableType">
 		<xs:complexContent>
 			<xs:extension base="ID_TYPE">
@@ -1545,7 +1533,7 @@ Ende auskommentiert von Kai -->
 		</xs:all>
 	</xs:complexType>
 	<!--
-       *** divetrip
+	*** divetrip
 	-->
 	<xs:element name="divetrip">
 		<xs:complexType>
@@ -1642,7 +1630,7 @@ Ende auskommentiert von Kai -->
 		</xs:complexContent>
 	</xs:complexType>
 	<!--
-		*** divecomputercontrol
+	*** divecomputercontrol
 	-->
 	<xs:element name="divecomputercontrol">
 		<xs:complexType>
@@ -1704,28 +1692,28 @@ Ende auskommentiert von Kai -->
 	<xs:complexType name="dcalarmWithTimeType">
 		<xs:complexContent>
 			<xs:sequence>
-			    <xs:element name="time" type="dcalarmtimeType" />
+				<xs:element name="time" type="dcalarmtimeType" />
 				<xs:element name="dcalarm" type="dcalarmType"/>
 			</xs:sequence>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="dcalarmtimeType">
-	  <xs:sequence>
-	    <xs:element name="hour">
-	      <xs:simpleType>
-	        <xs:restriction base="xs:nonNegativeInteger">
-	          <xs:maxInclusive value="23" /> 
-	        </xs:restriction>
-	      </xs:simpleType>
-	    </xs:element>
-	    <xs:element name="minute">
-	      <xs:simpleType>
-	        <xs:restriction base="xs:nonNegativeInteger">
-	          <xs:maxInclusive value="59" /> 
-	        </xs:restriction>
-	      </xs:simpleType>
-	    </xs:element>
-	  </xs:sequence>
+		<xs:sequence>
+			<xs:element name="hour">
+				<xs:simpleType>
+					<xs:restriction base="xs:nonNegativeInteger">
+						<xs:maxInclusive value="23" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="minute">
+				<xs:simpleType>
+					<xs:restriction base="xs:nonNegativeInteger">
+						<xs:maxInclusive value="59" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="dcalarmWithDepthType">
 		<xs:sequence>
@@ -1744,7 +1732,7 @@ Ende auskommentiert von Kai -->
 	</xs:complexType>
 	<xs:complexType name="dcalarmType">
 		<xs:all>
-			<xs:element name="acknowledge" minOccurs="0" type="markerType"> </xs:element>
+			<xs:element name="acknowledge" minOccurs="0" type="markerType"/>
 			<xs:element name="period" type="xs:float" minOccurs="0"/>
 			<xs:element name="alarmType" type="xs:unsignedShort"/>
 		</xs:all>
@@ -1820,10 +1808,6 @@ Ende auskommentiert von Kai -->
 		<xs:sequence>
 			<xs:element name="waypoint" type="waypointType" maxOccurs="unbounded"/>
 		</xs:sequence>
-<!-- keine Attribute bei samples... KS 09.01.2012
-        <xs:attribute name="startdivemode" use="required" type="divemodeType"> </xs:attribute>
-		<xs:attribute name="startmix" type="xs:string" use="required"/>
--->
 	</xs:complexType>
 	<xs:complexType name="rebreatherType">
 		<xs:complexContent>
