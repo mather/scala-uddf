@@ -103,11 +103,24 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="priceperdivepackageType">
-		<xs:complexContent>
-			<xs:extension base="priceType">
-				<xs:attribute name="noofdives"/>
+		<xs:simpleContent>
+			<xs:extension base="xs:float">
+				<xs:attribute name="currency">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="noofdives">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="0" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
 			</xs:extension>
-		</xs:complexContent>
+		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="ratingType">
 		<xs:sequence>
