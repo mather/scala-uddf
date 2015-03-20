@@ -3,7 +3,6 @@
     <generator>
         <!-- description of the program generating the UDDF file -->
         <name>DSTG - Diver's Super Table Generator</name>
-        <manufacturer>Dive Heroes Company</manufacturer>
         <manufacturer>
             <name>Dive Heroes Company</name>
             <address>

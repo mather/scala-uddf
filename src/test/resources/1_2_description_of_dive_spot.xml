@@ -35,7 +35,7 @@
                 <homepage>http://www.deep-down-diving.com</homepage>
             </contact>
             <priceperdive currency="USD">40.00</priceperdive>
-            <pricedivepackage currency="USD" noofdives="10">350.00</pricedivepackage>
+            <pricedivepackage currency="USD" noofdives="10">350.0</pricedivepackage>
             <guide>
                 <!-- dive guide already registered as <buddy>, therefore only cross-referencing here -->
                 <link ref="buddy_Georg"/>
@@ -65,9 +65,9 @@
                 <altitude>0.0</altitude>
             </geography>
             <sitedata>
+              <bottom>sandy ground</bottom>
+              <density>1030.0</density>   <!-- salt water -->
                 <maximumdepth>37.0</maximumdepth>
-                <density>1030.0</density>   <!-- salt water -->
-                <bottom>sandy ground</bottom>
                 <wreck id="wreck_Brummer">
                     <name>SMS Brummer</name>
                     <shiptype>light cruiser</shiptype>
@@ -85,7 +85,7 @@
                         <displacement>4.385E6</displacement>
                     </shipdimension>
                     <sunk>
-                        <datetime>1919-06-21T13:05</datetime>
+                        <datetime>1919-06-21T13:05:00</datetime>
                     </sunk>
                     <notes>
                         <para>German high sea fleet</para>
@@ -139,6 +139,9 @@
                     <province>Cote d'Azur</province>
                     <country>France</country>
                 </geography>
+                <operator>
+                  <name>Someone</name>
+                </operator>
                 <vessel>
                     <name>Dorade</name>
                     <shiptype>sailing ship</shiptype>
@@ -171,6 +174,9 @@
                         <country>Corse</country>
                     </address>
                 </geography>
+                <operator>
+                  <name>Someone</name>
+                </operator>
                 <vessel>
                     <name>Galiote</name>
                     <shiptype>motoryacht</shiptype>
