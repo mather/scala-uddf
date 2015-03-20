@@ -1564,7 +1564,7 @@ Ende auskommentiert von Kai -->
 					<xs:element name="geography" type="geographyType" minOccurs="0"/>
 					<xs:choice>
 						<xs:sequence>
-							<xs:element name="accomodation" type="accommodationType"/>
+							<xs:element name="accommodation" type="accommodationType"/>
 						</xs:sequence>
 						<xs:sequence>
 							<xs:element name="operator" type="operatorType"/>
