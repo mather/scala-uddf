@@ -39,19 +39,12 @@
 			<xs:length value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="namedType">
-		<xs:attributeGroup ref="Entity" />
+	<xs:group name="nameAndAliases">
 		<xs:sequence>
 			<xs:element name="name" type="xs:string"/>
 			<xs:element name="aliasname" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="simpleNamedType">
-		<xs:sequence>
-			<xs:element name="name" type="xs:string"/>
-			<xs:element name="aliasname" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
+	</xs:group>
 	<xs:complexType name="addressType">
 		<xs:all>
 			<xs:element name="street" type="xs:string" minOccurs="0"/>
@@ -440,40 +433,31 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="equipmentconfigurationType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="link" type="linkType" maxOccurs="unbounded"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="link" type="linkType" maxOccurs="unbounded"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="manufacturerType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="address" type="addressType" minOccurs="0"/>
-					<xs:element name="contact" type="contactType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="address" type="addressType" minOccurs="0"/>
+			<xs:element name="contact" type="contactType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="equipmentPieceType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="link" type="linkType" minOccurs="0"/>
-					<xs:element name="manufacturer" type="manufacturerType" minOccurs="0"/>
-					<xs:element name="model" type="xs:string" minOccurs="0"/>
-					<xs:element name="serialnumber" type="xs:string" minOccurs="0"/>
-					<xs:element name="purchase" type="purchaseType" minOccurs="0"/>
-					<xs:element name="serviceinterval" type="xs:positiveInteger" minOccurs="0"/>
-					<xs:element name="nextservicedate" type="encapsulatedDateTimeType" minOccurs="0"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="link" type="linkType" minOccurs="0"/>
+			<xs:element name="manufacturer" type="manufacturerType" minOccurs="0"/>
+			<xs:element name="model" type="xs:string" minOccurs="0"/>
+			<xs:element name="serialnumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="purchase" type="purchaseType" minOccurs="0"/>
+			<xs:element name="serviceinterval" type="xs:positiveInteger" minOccurs="0"/>
+			<xs:element name="nextservicedate" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="suitType">
 		<xs:complexContent>
@@ -537,15 +521,12 @@
 		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="shopType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="address" type="addressType" minOccurs="0"/>
-					<xs:element name="contact" type="contactType" minOccurs="0"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="address" type="addressType" minOccurs="0"/>
+			<xs:element name="contact" type="contactType" minOccurs="0"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<!--
 	*** divesite
@@ -562,20 +543,17 @@
 	*** divesite divebase
 	-->
 	<xs:complexType name="divebaseType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="address" type="addressType" minOccurs="0"/>
-					<xs:element name="contact" type="contactType" minOccurs="0"/>
-					<xs:element name="priceperdive" type="priceType" minOccurs="0"/>
-					<xs:element name="pricedivepackage" type="priceperdivepackageType" minOccurs="0"/>
-					<xs:element name="guide" type="guideType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="rating" type="ratingType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="link" type="linkType" minOccurs="0" />
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="address" type="addressType" minOccurs="0"/>
+			<xs:element name="contact" type="contactType" minOccurs="0"/>
+			<xs:element name="priceperdive" type="priceType" minOccurs="0"/>
+			<xs:element name="pricedivepackage" type="priceperdivepackageType" minOccurs="0"/>
+			<xs:element name="guide" type="guideType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="rating" type="ratingType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="link" type="linkType" minOccurs="0" />
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="guideType">
 		<xs:attributeGroup ref="Entity" />
@@ -587,32 +565,29 @@
 	*** divesite site
 	-->
 	<xs:complexType name="siteType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="environment" minOccurs="0">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:enumeration value="unknown "/>
-								<xs:enumeration value="ocean-sea"/>
-								<xs:enumeration value="lake-quarry"/>
-								<xs:enumeration value="river-spring"/>
-								<xs:enumeration value="cave-cavern"/>
-								<xs:enumeration value="pool"/>
-								<xs:enumeration value="hyperbaric-chamber"/>
-								<xs:enumeration value="under-ice"/>
-								<xs:enumeration value="other"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:element>
-					<xs:element name="geography" type="geographyType" minOccurs="0"/>
-					<xs:element name="ecology" type="ecologyType" minOccurs="0"/>
-					<xs:element name="sitedata" type="sitedataType" minOccurs="0"/>
-					<xs:element name="rating" type="ratingType" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="environment" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="unknown "/>
+						<xs:enumeration value="ocean-sea"/>
+						<xs:enumeration value="lake-quarry"/>
+						<xs:enumeration value="river-spring"/>
+						<xs:enumeration value="cave-cavern"/>
+						<xs:enumeration value="pool"/>
+						<xs:enumeration value="hyperbaric-chamber"/>
+						<xs:enumeration value="under-ice"/>
+						<xs:enumeration value="other"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="geography" type="geographyType" minOccurs="0"/>
+			<xs:element name="ecology" type="ecologyType" minOccurs="0"/>
+			<xs:element name="sitedata" type="sitedataType" minOccurs="0"/>
+			<xs:element name="rating" type="ratingType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="geographyType">
 		<xs:all>
@@ -647,18 +622,16 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="wreckType">
-		<xs:complexContent>
-			<xs:extension base="simpleNamedType">
-				<xs:sequence>
-					<xs:element name="shiptype" type="xs:string" minOccurs="0"/>
-					<xs:element name="nationality" type="xs:string" minOccurs="0"/>
-					<xs:element name="built" type="builtType" minOccurs="0"/>
-					<xs:element name="shipdimension" type="dimensionType" minOccurs="0"/>
-					<xs:element name="sunk" type="encapsulatedDateTimeType" minOccurs="0"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:attributeGroup ref="Entity" />
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="shiptype" type="xs:string" minOccurs="0"/>
+			<xs:element name="nationality" type="xs:string" minOccurs="0"/>
+			<xs:element name="built" type="builtType" minOccurs="0"/>
+			<xs:element name="shipdimension" type="dimensionType" minOccurs="0"/>
+			<xs:element name="sunk" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="builtType">
 		<xs:sequence>
@@ -676,33 +649,26 @@
 		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="placeType">
-		<xs:complexContent>
-			<xs:extension base="simpleNamedType">
-				<xs:sequence>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:attributeGroup ref="Entity" />
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="caveType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="indoorType">
-		<xs:complexContent>
-			<xs:extension base="simpleNamedType">
-				<xs:sequence>
-					<xs:element name="address" type="addressType" minOccurs="0"/>
-					<xs:element name="contact" type="contactType" minOccurs="0"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:attributeGroup ref="Entity" />
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="address" type="addressType" minOccurs="0"/>
+			<xs:element name="contact" type="contactType" minOccurs="0"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ecologyType">
 		<xs:sequence>
@@ -846,23 +812,20 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="mixType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="o2" type="xs:float" minOccurs="0"/>
-					<xs:element name="n2" type="xs:float" minOccurs="0"/>
-					<xs:element name="he" type="xs:float" minOccurs="0"/>
-					<xs:element name="ar" type="xs:float" minOccurs="0"/>
-					<xs:element name="h2" type="xs:float" minOccurs="0"/>
-					<xs:element name="priceperlitre" type="priceType" minOccurs="0"/>
-					<xs:choice>
-						<xs:element name="maximumpo2" type="xs:float" minOccurs="0"/>
-						<xs:element name="maximumoperationdepth" type="xs:float" minOccurs="0"/>
-					</xs:choice>
-					<xs:element name="equivalentairdepth" type="xs:float" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="o2" type="xs:float" minOccurs="0"/>
+			<xs:element name="n2" type="xs:float" minOccurs="0"/>
+			<xs:element name="he" type="xs:float" minOccurs="0"/>
+			<xs:element name="ar" type="xs:float" minOccurs="0"/>
+			<xs:element name="h2" type="xs:float" minOccurs="0"/>
+			<xs:element name="priceperlitre" type="priceType" minOccurs="0"/>
+			<xs:choice>
+				<xs:element name="maximumpo2" type="xs:float" minOccurs="0"/>
+				<xs:element name="maximumoperationdepth" type="xs:float" minOccurs="0"/>
+			</xs:choice>
+			<xs:element name="equivalentairdepth" type="xs:float" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<!--
 	*** profiledata
@@ -1299,22 +1262,20 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="drugType">
-		<xs:complexContent>
-			<xs:extension base="simpleNamedType">
-				<xs:sequence>
-					<xs:element name="periodicallytaken" minOccurs="0">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:enumeration value="no"/>
-								<xs:enumeration value="yes"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:element>
-					<xs:element name="timespanbeforedive" type="xs:float" minOccurs="0"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:attributeGroup ref="Entity" />
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="periodicallytaken" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="no"/>
+						<xs:enumeration value="yes"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="timespanbeforedive" type="xs:float" minOccurs="0"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="applicationdataType">
 		<xs:all>
@@ -1507,91 +1468,78 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="tripType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="rating" type="ratingType" minOccurs="0" />
-					<xs:element name="trippart" type="trippartType" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="rating" type="ratingType" minOccurs="0" />
+			<xs:element name="trippart" type="trippartType" maxOccurs="unbounded"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="trippartType">
-		<xs:complexContent>
-			<xs:extension base="simpleNamedType">
+		<xs:attributeGroup ref="Entity" />
+		<xs:attribute name="type"/>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="dateoftrip" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="startdate" type="xs:dateTime" use="required"/>
+					<xs:attribute name="enddate" type="xs:dateTime" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="geography" type="geographyType" minOccurs="0"/>
+			<xs:choice>
 				<xs:sequence>
-					<xs:element name="dateoftrip" minOccurs="0">
-						<xs:complexType>
-							<xs:attribute name="startdate" type="xs:dateTime" use="required"/>
-							<xs:attribute name="enddate" type="xs:dateTime" use="required"/>
-						</xs:complexType>
-					</xs:element>
-					<xs:element name="geography" type="geographyType" minOccurs="0"/>
-					<xs:choice>
-						<xs:sequence>
-							<xs:element name="accommodation" type="accommodationType"/>
-						</xs:sequence>
-						<xs:sequence>
-							<xs:element name="operator" type="operatorType"/>
-							<xs:element name="vessel" type="vesselType"/>
-						</xs:sequence>
-					</xs:choice>
-					<xs:element name="link" type="linkType" minOccurs="0"/>
-					<xs:element name="relateddives" minOccurs="0">
-						<xs:complexType>
-							<xs:sequence>
-								<xs:element name="link" type="linkType" maxOccurs="unbounded"/>
-							</xs:sequence>
-						</xs:complexType>
-					</xs:element>
-					<xs:element name="pricedivepackage" type="priceperdivepackageType" minOccurs="0"/>
-					<xs:element name="priceperdive" type="priceType" minOccurs="0"/>
-					<xs:element name="rating" type="ratingType" minOccurs="0"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
+					<xs:element name="accommodation" type="accommodationType"/>
 				</xs:sequence>
-				<xs:attribute name="type"/>
-			</xs:extension>
-		</xs:complexContent>
+				<xs:sequence>
+					<xs:element name="operator" type="operatorType"/>
+					<xs:element name="vessel" type="vesselType"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="link" type="linkType" minOccurs="0"/>
+			<xs:element name="relateddives" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="link" type="linkType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="pricedivepackage" type="priceperdivepackageType" minOccurs="0"/>
+			<xs:element name="priceperdive" type="priceType" minOccurs="0"/>
+			<xs:element name="rating" type="ratingType" minOccurs="0"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="accommodationType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="category" type="xs:string" minOccurs="0"/>
-					<xs:element name="address" type="addressType" minOccurs="0"/>
-					<xs:element name="contact" type="contactType" minOccurs="0"/>
-					<xs:element name="rating" type="ratingType" minOccurs="0"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="category" type="xs:string" minOccurs="0"/>
+			<xs:element name="address" type="addressType" minOccurs="0"/>
+			<xs:element name="contact" type="contactType" minOccurs="0"/>
+			<xs:element name="rating" type="ratingType" minOccurs="0"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="vesselType">
-		<xs:complexContent>
-			<xs:extension base="namedType">
-				<xs:sequence>
-					<xs:element name="shiptype" type="xs:string" minOccurs="0"/>
-					<xs:element name="marina" type="xs:string" minOccurs="0"/>
-					<xs:element name="address" type="addressType" minOccurs="0"/>
-					<xs:element name="contact" type="contactType" minOccurs="0"/>
-					<xs:element name="shipdimension" type="dimensionType" minOccurs="0"/>
-					<xs:element name="rating" type="ratingType" minOccurs="0"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="shiptype" type="xs:string" minOccurs="0"/>
+			<xs:element name="marina" type="xs:string" minOccurs="0"/>
+			<xs:element name="address" type="addressType" minOccurs="0"/>
+			<xs:element name="contact" type="contactType" minOccurs="0"/>
+			<xs:element name="shipdimension" type="dimensionType" minOccurs="0"/>
+			<xs:element name="rating" type="ratingType" minOccurs="0"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="operatorType">
-		<xs:complexContent>
-			<xs:extension base="simpleNamedType">
-				<xs:sequence>
-					<xs:element name="address" type="addressType" minOccurs="0"/>
-					<xs:element name="contact" type="contactType" minOccurs="0"/>
-					<xs:element name="rating" type="ratingType" minOccurs="0"/>
-					<xs:element name="notes" type="notesType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:attributeGroup ref="Entity" />
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="address" type="addressType" minOccurs="0"/>
+			<xs:element name="contact" type="contactType" minOccurs="0"/>
+			<xs:element name="rating" type="ratingType" minOccurs="0"/>
+			<xs:element name="notes" type="notesType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<!--
 	*** divecomputercontrol
@@ -1686,13 +1634,11 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="dcdecomodelType">
-		<xs:complexContent>
-			<xs:extension base="simpleNamedType">
-				<xs:sequence>
-					<xs:element name="applicationdata" type="applicationdataType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:attributeGroup ref="Entity" />
+		<xs:sequence>
+			<xs:group ref="nameAndAliases" />
+			<xs:element name="applicationdata" type="applicationdataType" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="dcalarmType">
 		<xs:all>
