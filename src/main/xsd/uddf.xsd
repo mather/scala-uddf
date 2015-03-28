@@ -440,6 +440,7 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="manufacturerType">
+        <xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:group ref="nameAndAliases" />
 			<xs:element name="address" type="addressType" minOccurs="0"/>
