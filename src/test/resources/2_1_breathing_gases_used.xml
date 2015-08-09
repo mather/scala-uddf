@@ -67,10 +67,8 @@
               <name>A tank shop</name>
             </shop>
           </purchase>
-          <nextservicedate>
-            <!-- date of next proof by safety standards authority -->
-            <datetime>2016-10-12</datetime>
-          </nextservicedate>
+          <!-- date of next proof by safety standards authority -->
+          <nextservicedate>2016-10-12</nextservicedate>
           <notes>
             <link ref="img_steeltank_new"/>
             <link ref="img_steeltank_2_years_later"/>

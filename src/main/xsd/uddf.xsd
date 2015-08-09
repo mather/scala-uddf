@@ -64,11 +64,6 @@
 			<xs:element name="homepage" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="encapsulatedDateTimeType">
-		<xs:sequence>
-			<xs:element name="datetime" type="xs:dateTime"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="notesType">
 		<xs:choice maxOccurs="unbounded">
 			<xs:element name="para" type="xs:string" minOccurs="0"/>
@@ -398,8 +393,8 @@
 		<xs:sequence>
 			<xs:element name="name"/>
 			<xs:element name="aliasname" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="issuedate" type="encapsulatedDateTimeType" minOccurs="0"/>
-			<xs:element name="validdate" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="issuedate" type="xs:date" minOccurs="0"/>
+			<xs:element name="validdate" type="xs:date" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -456,7 +451,7 @@
 			<xs:element name="serialnumber" type="xs:string" minOccurs="0"/>
 			<xs:element name="purchase" type="purchaseType" minOccurs="0"/>
 			<xs:element name="serviceinterval" type="xs:positiveInteger" minOccurs="0"/>
-			<xs:element name="nextservicedate" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="nextservicedate" type="xs:date" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -630,14 +625,14 @@
 			<xs:element name="nationality" type="xs:string" minOccurs="0"/>
 			<xs:element name="built" type="builtType" minOccurs="0"/>
 			<xs:element name="shipdimension" type="dimensionType" minOccurs="0"/>
-			<xs:element name="sunk" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="sunk" type="xs:date" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="builtType">
 		<xs:sequence>
 			<xs:element name="shipyard" type="xs:string" minOccurs="0"/>
-			<xs:element name="launchingdate" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="launchingdate" type="xs:date" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="dimensionType">
@@ -1138,7 +1133,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="dateofflight" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="dateofflight" type="xs:date" minOccurs="0"/>
 			<xs:element name="altitudeofexposure" type="xs:positiveInteger" minOccurs="0"/>
 			<xs:element name="totallengthofexposure" type="xs:positiveInteger" minOccurs="0"/>
 		</xs:all>
@@ -1560,7 +1555,7 @@
 			<xs:element name="setdcalarmtime" type="dcalarmWithTimeType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="setdcaltitude" type="xs:float" minOccurs="0"/>
 			<xs:element name="setdcbuddydata" type="dcbuddydataType" minOccurs="0"/>
-			<xs:element name="setdcdatetime" type="encapsulatedDateTimeType" minOccurs="0"/>
+			<xs:element name="setdcdatetime" type="xs:dateTime" minOccurs="0"/>
 			<xs:element name="setdcdecomodel" type="dcdecomodelType" minOccurs="0"/>
 			<xs:element name="setdcdivedepthalarm" type="dcalarmWithDepthType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="setdcdivepo2alarm" type="dcdivepo2alarmType" minOccurs="0" maxOccurs="unbounded"/>

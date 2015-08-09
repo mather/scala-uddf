@@ -74,9 +74,7 @@
           <nationality>German</nationality>
           <built>
             <shipyard>Vulcan, Stettin</shipyard>
-            <launchingdate>
-              <datetime>1916</datetime>
-            </launchingdate>
+            <launchingdate>1959-07-18</launchingdate>
           </built>
           <shipdimension>
             <length>140.0</length>
@@ -84,9 +82,7 @@
             <draught>6.0</draught>
             <displacement>4.385E6</displacement>
           </shipdimension>
-          <sunk>
-            <datetime>1919-06-21T13:05:00</datetime>
-          </sunk>
+          <sunk>1919-06-21</sunk>
           <notes>
             <para>German high sea fleet</para>
           </notes>

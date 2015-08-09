@@ -18,9 +18,7 @@
   <divecomputercontrol>
     <setdcdata>
       <!-- set date and time -->
-      <setdcdatetime>
-        <datetime>2006-05-18T14:21:00</datetime>
-      </setdcdatetime>
+      <setdcdatetime>2006-05-18T14:21:00</setdcdatetime>
       <!-- settings for an alarm, to be given by the dive computer at 16.30 h -->
       <setdcalarmtime>
         <time>
