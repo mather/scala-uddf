@@ -571,7 +571,7 @@
 			<xs:element name="environment" minOccurs="0">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:enumeration value="unknown "/>
+						<xs:enumeration value="unknown"/>
 						<xs:enumeration value="ocean-sea"/>
 						<xs:enumeration value="lake-quarry"/>
 						<xs:enumeration value="river-spring"/>
