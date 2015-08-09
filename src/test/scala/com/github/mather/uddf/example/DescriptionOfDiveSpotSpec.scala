@@ -22,5 +22,9 @@ class DescriptionOfDiveSpotSpec extends Specification {
       val uddf = scalaxb.fromXML[Uddf](xml)
       uddf must haveClass[Uddf]
     }
+    "must have manufacturer ID" >> {
+      val uddf = scalaxb.fromXML[Uddf](xml)
+      uddf.generator.flatMap(_.manufacturer.map(_.id)) must beSome("foo")
+    }
   }
 }

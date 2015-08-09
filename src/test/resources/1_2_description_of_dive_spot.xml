@@ -4,7 +4,7 @@
     <!-- description of the program generating the UDDF file -->
     <name>DSL - Diver's Super Logbook</name>
     <type>logbook</type>
-    <manufacturer>
+    <manufacturer id="foo">
       <name>Dive Heroes Company</name>
       <address>
         <!-- address data of manufacturer -->
