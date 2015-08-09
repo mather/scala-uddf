@@ -1557,7 +1557,7 @@
 			<xs:element name="setdcdivesitedata" type="dcdivesitedataType" minOccurs="0"/>
 			<xs:element name="setdcdivetimealarm" type="dcdivetimealarmType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="setdcendndtalarm" type="dcendndtalarmType" minOccurs="0"/>
-			<xs:element name="setdcgasdefinitionsdata" type="markerType"/>
+			<xs:element name="setdcgasdefinitionsdata" type="markerType" minOccurs="0"/>
 			<xs:element name="setdcownerdata" type="markerType" minOccurs="0"/>
 			<xs:element name="setdcpassword" type="xs:string" minOccurs="0"/>
 			<xs:element name="setdcgeneratordata" type="markerType" minOccurs="0"/>
