@@ -162,37 +162,36 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="imageType">
-		<xs:complexContent>
-			<xs:extension base="mediaType">
-				<xs:sequence>
-					<xs:element name="imagedata" minOccurs="0">
-						<xs:complexType>
-							<xs:all>
-								<xs:element name="aperture" type="xs:float" minOccurs="0"/>
-								<xs:element name="datetime" type="xs:dateTime" minOccurs="0"/>
-								<xs:element name="exposurecompensation" type="xs:float" minOccurs="0"/>
-								<xs:element name="filmspeed" type="xs:unsignedInt" minOccurs="0"/>
-								<xs:element name="focallength" type="xs:float" minOccurs="0"/>
-								<xs:element name="focusingdistance" type="xs:float" minOccurs="0"/>
-								<xs:element name="meteringmethod" minOccurs="0">
-									<xs:simpleType>
-										<xs:restriction base="xs:string">
-											<xs:enumeration value="spot"/>
-											<xs:enumeration value="centerweighted"/>
-											<xs:enumeration value="matrix"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-								<xs:element name="shutterspeed" type="xs:float" minOccurs="0"/>
-							</xs:all>
-						</xs:complexType>
-					</xs:element>
-				</xs:sequence>
-				<xs:attribute name="height" type="xs:unsignedInt"/>
-				<xs:attribute name="width" type="xs:unsignedInt"/>
-				<xs:attribute name="format" type="xs:string"/>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:attributeGroup ref="Entity" />
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" minOccurs="0"/>
+			<xs:element name="objectname" type="xs:string"/>
+			<xs:element name="imagedata" minOccurs="0">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="aperture" type="xs:float" minOccurs="0"/>
+						<xs:element name="datetime" type="xs:dateTime" minOccurs="0"/>
+						<xs:element name="exposurecompensation" type="xs:float" minOccurs="0"/>
+						<xs:element name="filmspeed" type="xs:unsignedInt" minOccurs="0"/>
+						<xs:element name="focallength" type="xs:float" minOccurs="0"/>
+						<xs:element name="focusingdistance" type="xs:float" minOccurs="0"/>
+						<xs:element name="meteringmethod" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="spot"/>
+									<xs:enumeration value="centerweighted"/>
+									<xs:enumeration value="matrix"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="shutterspeed" type="xs:float" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="height" type="xs:unsignedInt"/>
+		<xs:attribute name="width" type="xs:unsignedInt"/>
+		<xs:attribute name="format" type="xs:string"/>
 	</xs:complexType>
 	<!--
 	*** maker
