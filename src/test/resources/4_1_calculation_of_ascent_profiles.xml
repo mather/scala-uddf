@@ -110,32 +110,32 @@
           <waypoint>
             <!-- Every dive begins at 0 min at the surface! :-) -->
             <!-- beginning the dive with Nitrox NOAA I (32 % O2, 68 % N2) -->
-            <divetime>0.0</divetime>
             <depth>0.0</depth>
+            <divetime>0.0</divetime>
             <switchmix ref="noaa1"/>
           </waypoint>
           <!-- simple profile: -->
           <!-- descent within 10 min to 100 m -->
           <waypoint>
             <!-- at a depth of 35 m change to Trimix mix -->
-            <divetime>210.0</divetime>
             <depth>35.0</depth>
+            <divetime>210.0</divetime>
             <switchmix ref="trimix"/>
           </waypoint>
           <waypoint>
             <!-- at a depth of 80 m change to Heliox -->
-            <divetime>480.0</divetime>
             <depth>80.0</depth>
+            <divetime>480.0</divetime>
             <switchmix ref="heliox"/>
           </waypoint>
           <waypoint>
-            <divetime>600.0</divetime>
             <depth>100.0</depth>
+            <divetime>600.0</divetime>
           </waypoint>
           <waypoint>
             <!-- remaining time on depth 10 min -->
-            <divetime>900.0</divetime>
             <depth>100.0</depth>
+            <divetime>900.0</divetime>
           </waypoint>
           <!-- now the ascent begins - it's the program's task to calculate it -->
         </inputprofile>
