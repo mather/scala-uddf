@@ -198,11 +198,9 @@
 	-->
 	<xs:element name="maker">
 		<xs:complexType>
-			<xs:complexContent>
-				<xs:sequence>
-					<xs:element name="manufacturer" type="manufacturerType" minOccurs="0" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:complexContent>
+			<xs:sequence>
+				<xs:element name="manufacturer" type="manufacturerType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<!--
@@ -210,11 +208,9 @@
 	-->
 	<xs:element name="business">
 		<xs:complexType>
-			<xs:complexContent>
-				<xs:sequence>
-					<xs:element name="shop" type="shopType" minOccurs="0" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:complexContent>
+			<xs:sequence>
+				<xs:element name="shop" type="shopType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<!--
@@ -1597,12 +1593,10 @@
 		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="dcalarmWithTimeType">
-		<xs:complexContent>
-			<xs:sequence>
-				<xs:element name="time" type="dcalarmtimeType" />
-				<xs:element name="dcalarm" type="dcalarmType"/>
-			</xs:sequence>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:element name="time" type="dcalarmtimeType" />
+			<xs:element name="dcalarm" type="dcalarmType"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="dcalarmtimeType">
 		<xs:sequence>
