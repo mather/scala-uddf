@@ -1144,7 +1144,7 @@
 	</xs:complexType>
 
 	<xs:complexType name="waypointType">
-		<xs:all>
+		<xs:sequence>
 			<xs:element name="alarm" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:simpleContent>
@@ -1237,7 +1237,7 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="nodecotime" minOccurs="0" type="xs:float"/>
-		</xs:all>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="alarmType">
 		<xs:restriction base="xs:string">
@@ -1546,7 +1546,7 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="setdcdataType">
-		<xs:all>
+		<xs:sequence>
 			<xs:element name="setdcalarmtime" type="dcalarmWithTimeType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="setdcaltitude" type="xs:float" minOccurs="0"/>
 			<xs:element name="setdcbuddydata" type="dcbuddydataType" minOccurs="0"/>
@@ -1561,7 +1561,7 @@
 			<xs:element name="setdcownerdata" type="markerType" minOccurs="0"/>
 			<xs:element name="setdcpassword" type="xs:string" minOccurs="0"/>
 			<xs:element name="setdcgeneratordata" type="markerType" minOccurs="0"/>
-		</xs:all>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="dcendndtalarmType">
 		<xs:sequence>
