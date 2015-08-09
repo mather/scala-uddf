@@ -75,7 +75,7 @@ class GeneratorSpec extends Specification {
         )
       )
       val xml = scalaxb.toXML(generator, "generator", uddf.defaultScope)
-      println(xml)
+      // println(xml)
       (xml \ "version")(0).text must_== "1.0.2"
     }
   }
