@@ -14,7 +14,7 @@ class DescriptionOfDiveSpotSpec extends Specification {
 
   val xml = XML.load(getClass.getResource("/1_2_description_of_dive_spot.xml"))
 
-  "Diver Data XML" >> {
+  "DescriptionOfDiveSpot XML" >> {
     "can be load as XML" >> {
       xml must haveClass[Elem]
     }

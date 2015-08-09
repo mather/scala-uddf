@@ -14,7 +14,7 @@ class CalculationOfAMaximumBottomTimeTableSpec extends Specification {
 
   val xml = XML.load(getClass.getResource("/4_3_calculation_of_a_maximum_bottom_time_table.xml"))
 
-  "Diver Data XML" >> {
+  "CalculationOfAMaximumBottomTimeTable XML" >> {
     "can be load as XML" >> {
       xml must haveClass[Elem]
     }

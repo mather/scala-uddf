@@ -12,7 +12,7 @@ import scala.xml.{Elem, XML}
  */
 class ReadingRecordedDataFromDiveComputerSpec extends Specification {
 
-  "1st example" >> {
+  "ReadingRecordedDataFromDiveComputer 1st example" >> {
     val xml = XML.load(getClass.getResource("/5_2_reading_recorded_data_from_dive_computer_1.xml"))
 
     "Diver Data XML" >> {
@@ -26,7 +26,7 @@ class ReadingRecordedDataFromDiveComputerSpec extends Specification {
     }
   }
 
-  "2nd example" >> {
+  "ReadingRecordedDataFromDiveComputer 2nd example" >> {
     val xml = XML.load(getClass.getResource("/5_3_reading_recorded_data_from_dive_computer_2.xml"))
 
     "Diver Data XML" >> {

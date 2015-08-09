@@ -14,7 +14,7 @@ class CalculationOfAscentProfilesSpec extends Specification {
 
   val xml = XML.load(getClass.getResource("/4_1_calculation_of_ascent_profiles.xml"))
 
-  "Diver Data XML" >> {
+  "CalculationOfAscentProfiles XML" >> {
     "can be load as XML" >> {
       xml must haveClass[Elem]
     }

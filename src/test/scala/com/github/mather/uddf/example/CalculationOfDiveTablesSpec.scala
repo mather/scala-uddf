@@ -14,7 +14,7 @@ class CalculationOfDiveTablesSpec extends Specification {
 
   val xml = XML.load(getClass.getResource("/4_2_calculation_of_dive_tables.xml"))
 
-  "Diver Data XML" >> {
+  "CalculationOfDiveTables XML" >> {
     "can be load as XML" >> {
       xml must haveClass[Elem]
     }

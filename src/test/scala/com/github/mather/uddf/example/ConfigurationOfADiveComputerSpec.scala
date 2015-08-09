@@ -14,7 +14,7 @@ class ConfigurationOfADiveComputerSpec extends Specification {
 
   val xml = XML.load(getClass.getResource("/5_1_configuration_of_a_dive_computer.xml"))
 
-  "Diver Data XML" >> {
+  "ConfigurationOfADiveComputer XML" >> {
     "can be load as XML" >> {
       xml must haveClass[Elem]
     }

@@ -12,7 +12,7 @@ import scala.xml.{Elem, XML}
 class BiologicalPopulationInventoriesSpec extends Specification {
   val xml = XML.load(getClass.getResource("/1_3_biological_population_inventories.xml"))
 
-  "Diver Data XML" >> {
+  "BiologicalPopulationInventories XML" >> {
     "can be load as XML" >> {
       xml must haveClass[Elem]
     }
