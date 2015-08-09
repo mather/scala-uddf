@@ -155,14 +155,13 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="mediaType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="title" type="xs:string" minOccurs="0"/>
 			<xs:element name="objectname" type="xs:string"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="imageType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="title" type="xs:string" minOccurs="0"/>
 			<xs:element name="objectname" type="xs:string"/>
@@ -189,6 +188,7 @@
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 		<xs:attribute name="height" type="xs:unsignedInt"/>
 		<xs:attribute name="width" type="xs:unsignedInt"/>
 		<xs:attribute name="format" type="xs:string"/>
@@ -325,15 +325,14 @@
 		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="individualType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="personal" type="personalType"/>
 			<xs:element name="address" type="addressType" minOccurs="0"/>
 			<xs:element name="contact" type="contactType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="examinationType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="datetime" type="xs:dateTime" minOccurs="0"/>
 			<xs:choice minOccurs="0">
@@ -352,6 +351,7 @@
 			<xs:element name="vitalcapacity" type="xs:float" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="certificationType">
 		<xs:sequence>
@@ -434,12 +434,12 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="manufacturerType">
-        <xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:group ref="nameAndAliases" />
 			<xs:element name="address" type="addressType" minOccurs="0"/>
 			<xs:element name="contact" type="contactType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="equipmentPieceType">
 		<xs:sequence>
@@ -491,22 +491,22 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="cameraType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="body" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="lens" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="housing" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="flash" type="equipmentPieceType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="videocameraType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:all>
 			<xs:element name="body" type="equipmentPieceType" minOccurs="0"/>
 			<xs:element name="lens" type="equipmentPieceType" minOccurs="0"/>
 			<xs:element name="housing" type="equipmentPieceType" minOccurs="0"/>
 			<xs:element name="light" type="equipmentPieceType" minOccurs="0"/>
 		</xs:all>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="purchaseType">
 		<xs:all>
@@ -551,10 +551,10 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="guideType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="link" type="linkType"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<!--
 	*** divesite site
@@ -617,7 +617,6 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="wreckType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:group ref="nameAndAliases" />
 			<xs:element name="shiptype" type="xs:string" minOccurs="0"/>
@@ -627,6 +626,7 @@
 			<xs:element name="sunk" type="xs:date" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="builtType">
 		<xs:sequence>
@@ -644,11 +644,11 @@
 		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="placeType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:group ref="nameAndAliases" />
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="caveType">
 		<xs:sequence>
@@ -657,13 +657,13 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="indoorType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:group ref="nameAndAliases" />
 			<xs:element name="address" type="addressType" minOccurs="0"/>
 			<xs:element name="contact" type="contactType" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="ecologyType">
 		<xs:sequence>
@@ -720,7 +720,6 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="speciesType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:all>
 			<xs:element name="trivialname" type="xs:string" minOccurs="0"/>
 			<xs:element name="scientificname" type="xs:string" minOccurs="0"/>
@@ -779,6 +778,7 @@
 			<xs:element name="size" type="xs:float" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:all>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:simpleType name="globallightintensityType">
 		<xs:restriction base="xs:string">
@@ -833,13 +833,12 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="repetitiongroupType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="dive" type="diveType" maxOccurs="unbounded"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="diveType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="informationbeforedive" type="informationbeforediveType"/>
 			<xs:element name="applicationdata" type="applicationdataType" minOccurs="0"/>
@@ -847,6 +846,7 @@
 			<xs:element name="tankdata" type="tankdataType" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="informationafterdive" type="informationafterdiveType"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="informationbeforediveType">
 		<xs:sequence>
@@ -1257,7 +1257,6 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="drugType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:group ref="nameAndAliases" />
 			<xs:element name="periodicallytaken" minOccurs="0">
@@ -1271,6 +1270,7 @@
 			<xs:element name="timespanbeforedive" type="xs:float" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="applicationdataType">
 		<xs:all>
@@ -1366,7 +1366,6 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="baseCalculationType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="title" type="xs:string" minOccurs="0"/>
 			<xs:element name="link" minOccurs="0" maxOccurs="unbounded" type="linkType"/>
@@ -1381,6 +1380,7 @@
 			<xs:element name="mixchange" type="mixchangeType" minOccurs="0"/>
 			<xs:element name="inputprofile" type="inputprofileType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="mixchangeType">
 		<xs:all>
@@ -1428,7 +1428,6 @@
 	*** tablegeneration calculatebottomtimetable
 	-->
 	<xs:complexType name="bottomtimetableType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="title" minOccurs="0"/>
 			<xs:element name="link" type="linkType" minOccurs="0" maxOccurs="unbounded"/>
@@ -1436,6 +1435,7 @@
 			<xs:element name="applicationdata" type="applicationdataType" minOccurs="0"/>
 			<xs:element name="bottomtimetablescope" type="bottomtimetablescopeType"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="bottomtimetablescopeType">
 		<xs:all>
@@ -1470,8 +1470,6 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="trippartType">
-		<xs:attributeGroup ref="Entity" />
-		<xs:attribute name="type"/>
 		<xs:sequence>
 			<xs:group ref="nameAndAliases" />
 			<xs:element name="dateoftrip" minOccurs="0">
@@ -1503,6 +1501,8 @@
 			<xs:element name="rating" type="ratingType" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
+		<xs:attribute name="type"/>
 	</xs:complexType>
 	<xs:complexType name="accommodationType">
 		<xs:sequence>
@@ -1527,7 +1527,6 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="operatorType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:group ref="nameAndAliases" />
 			<xs:element name="address" type="addressType" minOccurs="0"/>
@@ -1535,6 +1534,7 @@
 			<xs:element name="rating" type="ratingType" minOccurs="0"/>
 			<xs:element name="notes" type="notesType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<!--
 	*** divecomputercontrol
@@ -1629,11 +1629,11 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="dcdecomodelType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:group ref="nameAndAliases" />
 			<xs:element name="applicationdata" type="applicationdataType" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="dcalarmType">
 		<xs:all>
@@ -1662,21 +1662,20 @@
 		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="buehlmannType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element name="tissue" type="tissueType" maxOccurs="unbounded"/>
 			<xs:element name="gradientfactorhigh" type="xs:float" minOccurs="0"/>
 			<xs:element name="gradientfactorlow" type="xs:float" minOccurs="0"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="rgbmType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element maxOccurs="unbounded" name="tissue" type="tissueType"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="vpmType">
-		<xs:attributeGroup ref="Entity" />
 		<xs:sequence>
 			<xs:element minOccurs="0" name="gamma" type="xs:float"/>
 			<xs:element minOccurs="0" name="gc" type="xs:float"/>
@@ -1684,6 +1683,7 @@
 			<xs:element minOccurs="0" name="r0" type="xs:float"/>
 			<xs:element maxOccurs="unbounded" name="tissue" type="tissueType"/>
 		</xs:sequence>
+		<xs:attributeGroup ref="Entity" />
 	</xs:complexType>
 	<xs:complexType name="tissueType">
 		<xs:attribute name="gas" use="required">
