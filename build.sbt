@@ -10,7 +10,7 @@ lazy val scalaParser = "org.scala-lang.modules" %% "scala-parser-combinators" % 
 lazy val dispatchV = "0.11.2"
 lazy val dispatch = "net.databinder.dispatch" %% "dispatch-core" % dispatchV
 lazy val specs2_2 = "org.specs2" %% "specs2" % "2.4.17" % "test"
-lazy val specs2_3 = "org.specs2" %% "specs2-core" % "3.0.1" % "test"
+lazy val specs2_3 = "org.specs2" %% "specs2-core" % "3.6.4" % "test"
 
 lazy val root = (project in file(".")).
   settings(commonSettings: _*).
